@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { DataLayer } from './DataLayer';
+import reducer, { initialState } from './reducer';
+// import * as serviceWorker from './'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <DataLayer initialState={initialState} reducer={reducer}>
+  <App/>
+  </DataLayer>
+ </React.StrictMode>
 );
+
+// serviceWorker.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
