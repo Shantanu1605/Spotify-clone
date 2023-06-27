@@ -9,4 +9,7 @@ export const DataLayer = ({
         {children}
     </DataLayerContext.Provider>
 )
+
+//anytime if we want to get the value from data layer or dispatch a value to the data layer we want some kind of way to access data layer:
+// we will use a special type of hook--> useContext()
 export const useDataLayerValue = () => useContext(DataLayerContext);

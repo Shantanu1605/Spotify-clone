@@ -4,11 +4,20 @@ import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./Player";
 import { useDataLayerValue } from "./DataLayer";
-// import { useEffect } from 'react';
-const spotify = new SpotifyWebApi();
+
+
+const spotify = new SpotifyWebApi(); // Global object created that will help us to interact with spotify api
+
+
 function App() {
-  const [token, setToken] = useState(null);
-  const [{ user }, dispatch] = useDataLayerValue();
+  // const [token, setToken] = useState(null);
+
+  // if we want to get anything from the data layer then we will follow the syntax given below
+  const [{ user, token }, dispatch] = useDataLayerValue();
+  // dispatch is like a gun which is used to shoot the data layer with some values i.e if we want to update the data layer with some values we will use dispatch
+  //in above line we are pulling the user from the data layer 
+
+
   //run code based on a given condition
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -16,11 +25,14 @@ function App() {
     const _token = hash.access_token;
     // console.log('I have a token ->',token)
     if (_token) {
-      setToken(_token);
+      dispatch({
+        type: 'SET_TOKEN',
+        token: _token,
+      })
 
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
-        dispatch({
+        dispatch({ // dispatch will pop the user into the data layer
           type: "SET_USER",
           user: user,
         });
@@ -28,7 +40,8 @@ function App() {
     }
   }, []);
   console.log("🤠", user);
-  return <div className="app">{token ? <Player /> : <Login />}</div>;
+  console.log("👾 ",token)
+  return <div className="app">{token ? <Player spotify={spotify} /> : <Login />}</div>;
 }
 
 export default App;
