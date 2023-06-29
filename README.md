@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+UI Of the Spotify Clone created-
+1. Home Page for Authentication:
+   ![Screenshot (432)](https://github.com/Shantanu1605/Spotify-clone/assets/96099509/a1811a6d-7ad7-428e-8e0e-453b4b9d291d)
+2. Authentication by Spotify API:
+   ![Screenshot (433)](https://github.com/Shantanu1605/Spotify-clone/assets/96099509/3971505e-d31a-4f1a-b8d9-ba300b892dc5)
+3. Home Page of Spotify CLone:
+![Screenshot (434)](https://github.com/Shantanu1605/Spotify-clone/assets/96099509/1a9cd5f8-752b-4069-8ccd-d7cbefb47b36)
+![Screenshot (435)](https://github.com/Shantanu1605/Spotify-clone/assets/96099509/c4009646-557c-4d37-a7c3-3c3cf7572581)
+
+
