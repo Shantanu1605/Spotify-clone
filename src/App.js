@@ -37,7 +37,27 @@ function App() {
           user: user,
         });
       });
-    }
+      spotify.getUserPlaylists().then((playlists)=>{
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists: playlists,
+        });
+      })
+
+      spotify.getPlaylist('5dZdcND1dq4rnSl8lMjRHt').then(response =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+
+      spotify.getMyTopArtists().then((response) =>
+      dispatch({
+        type: "SET_TOP_ARTISTS",
+        top_artists: response,
+      })
+    );
+    };
   }, []);
   console.log("🤠", user);
   console.log("👾 ",token)
